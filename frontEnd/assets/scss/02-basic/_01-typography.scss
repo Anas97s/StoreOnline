@@ -1,0 +1,459 @@
+/*----------------------------------------*/
+/*  01 - Basic (Typography, Common Classes)
+/*----------------------------------------*/
+
+// - Typography
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+/* Common Style */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    border: none !important;
+    height: 100%;
+}
+
+body {
+    font-family: $font-family-base, Arial, Helvetica, sans-serif;
+    font-size: $font-size-base;
+    font-weight: 400;
+    font-style: normal;
+    line-height: $line-height-base;
+    position: relative;
+    visibility: visible;
+    overflow-x: hidden;
+    color: $body-color;
+    background-color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    margin-top: 0;
+    color: $headings-color;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    line-height: inherit;
+    margin: 0;
+}
+
+h1 {
+    font-size: calc(1.6rem + 1.6vw);
+    font-weight: 600;
+}
+h2 {
+    font-size: calc(1.44rem + 0.6vw);
+}
+h3 {
+    font-size: calc(1.625rem + 0.34vw);
+}
+h4 {
+    font-size: calc(1.2rem + .20vw);
+}
+h5 {
+    font-size: 1.375rem;
+}
+h6 {
+    font-size: 1.125rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a,
+button {
+    line-height: inherit;
+
+    display: inline-block;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    color: inherit;
+}
+
+a,
+button,
+img,
+input {
+    transition: $transition-base;
+}
+
+*:focus {
+    outline: none;
+}
+
+a:focus {
+    text-decoration: none;
+
+    color: inherit;
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    color: $primary;
+}
+
+button,
+input[type="submit"] {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+input,
+textarea {
+    @include placeholder {
+        opacity: 1;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+hr {
+    border-top-width: 2px;
+}
+
+/*----------------------------------------*/
+/*   - Social Share CSS
+/*----------------------------------------*/
+.social-share {
+    &-link {
+        font-size: 16px;
+        line-height: -1;
+    }
+    &-outline {
+        & .social-share {
+            &-link {
+                height: 35px;
+                width: 35px;
+                line-height: 35px;
+                text-align: center;
+                &.facebook {
+                    color: #3b5998;
+                    border: 2px solid #3b5998;
+                } 
+                &.twitter {
+                    color: #1da1f2;
+                    border: 2px solid #1da1f2;
+                }
+                &.pinterest {
+                    color: #bd081c;
+                    border: 2px solid #bd081c;
+                }
+                &.linkedin {
+                    color: #0077b5;
+                    border: 2px solid #0077b5;
+                }
+                &.google {
+                    color: #dd4b39;
+                    border: 2px solid #dd4b39;
+                }
+                &.instagram {
+                    color: #e1306c;
+                    border: 2px solid #e1306c;
+                }
+                &.youtube {
+                    color: #ff0000;
+                    border: 2px solid #ff0000;
+                }
+                &.tumblr {
+                    color: #35465c;
+                    border: 2px solid #35465c;
+                }
+                &.dribbble {
+                    color: #ea4c89;
+                    border: 2px solid #ea4c89;
+                }
+                &.behance {
+                    color: #1769ff;
+                    border: 2px solid #1769ff;
+                }
+                &.vimeo {
+                    color: #1ab7ea;
+                    border: 2px solid #1ab7ea;
+                }
+                &.flickr {
+                    color: #ff0084;
+                    border: 2px solid #ff0084;
+                }
+                &.slack {
+                    color: #4a154b;
+                    border: 2px solid #4a154b;
+                }
+                &:hover {
+                    border: 2px solid $primary;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+.social-share-in-color {
+    & .facebook {
+        color: #3b5998;
+    } 
+    & .twitter {
+        color: #1da1f2;
+    }
+    & .pinterest {
+        color: #bd081c;
+    }
+    & .linkedin {
+        color: #0077b5;
+    }
+    & .google {
+        color: #dd4b39;
+    }
+    & .instagram {
+        color: #e1306c;
+    }
+    & .youtube {
+        color: #ff0000;
+    }
+    & .tumblr {
+        color: #35465c;
+    }
+    & .dribbble {
+        color: #ea4c89;
+    }
+    & .behance {
+        color: #1769ff;
+    }
+    & .vimeo {
+        color: #1ab7ea;
+    }
+    & .flickr {
+        color: #ff0084;
+    }
+    & .slack {
+        color: #4a154b;
+    }
+}
+
+
+
+/*----------------------------------------*/
+/*   - fadeInDown Animation CSS
+/*----------------------------------------*/
+@-webkit-keyframes fadeInDown {
+    0% {
+        -webkit-transform:translate3d(0,-100%,0);
+        opacity:0;transform:translate3d(0,-100%,0)
+    } to {
+        -webkit-transform:translateZ(0);
+        opacity:1;
+        transform:translateZ(0)
+    }
+}
+@keyframes fadeInDown{
+    0% {
+        -webkit-transform:translate3d(0,-100%,0);
+        opacity:0;
+        transform:translate3d(0,-100%,0);
+    }
+    to {
+        -webkit-transform:translateZ(0);
+        opacity:1;
+        transform:translateZ(0)
+    }
+}
+.fadeInDown{
+    -webkit-animation-name:fadeInDown;
+    animation-name:fadeInDown
+}
+
+
+/*----------------------------------------*/
+/*   - Swiper Slider Style CSS
+/*----------------------------------------*/
+
+
+.swiper {
+    &:hover {
+        .swiper-navigation-prev,
+        .swiper-navigation-next {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+.swiper-navigation-outside {
+    position: relative;
+}
+.swiper-navigation {
+    &-next,
+    &-prev {
+        &::after {
+            content: "";
+        }
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        z-index: 10;
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid $dark;
+        color: $dark;
+        font-size: 16px;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        border-radius: 4px;
+        left: 20px;
+        right: auto;
+        opacity: 0;
+        visibility: hidden;
+        &:hover {
+            background-color: $dark;
+            color: $white;
+        }
+        &.swiper-button-disabled {
+            cursor: not-allowed;
+            opacity: .3 !important;
+        }
+    }
+    &-next{
+        right: 20px;
+        left: auto;
+    }
+    
+}
+.swiper-navigation-lite {
+    background-color: transparent;
+    border: 2px solid $white;
+    color: $white;
+    &:hover {
+        background-color: $dark;
+        color: $white;
+    }
+}
+.swiper-pagination {
+    &-button {
+        z-index: 3;
+    }
+    &-bullet {
+        width: 11px;
+        height: 11px;
+        background-color: $primary;
+    }
+}
+.swiper-pagination-button-lite {
+    z-index: 3;
+    & .swiper-pagination-bullet {
+        background-color: $white;
+    }
+}
+
+/*----------------------------------------*/
+/*   - Quick View Modal Style CSS
+/*----------------------------------------*/
+.product-quick-view-modal {
+    &.modal-dialog {
+        max-width: 920px;
+    }
+    & .modal-content {
+        border-radius: 0;
+    }
+}
+
+
+/*----------------------------------------*/
+/*   - Sign In Modal Style CSS
+/*----------------------------------------*/
+.sign-in-modal {
+    &.modal-dialog {
+        max-width: 550px;
+    }
+    & .modal-content {
+        border-radius: 0;
+    }
+}
+
+
+/*----------------------------------------*/
+/*   - Category Tab list CSS
+/*----------------------------------------*/
+.product-category-tab {
+    &-list {
+
+    }
+    &-link {
+        background-color: transparent;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 0 0 5px 0;
+        border-bottom: 2px solid transparent;
+        text-transform: capitalize;
+        color: $dark;
+        &.active,
+        &:hover {
+            color: $primary;
+            border-color: $primary;
+        }
+    }
+    &-link ~ .product-category-tab-link {
+        margin-left: 25px;
+    } 
+}
+
+#scrollButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+// Section  Title Css
+
+.section-title {
+    font-weight: 600;
+}

@@ -1,0 +1,188 @@
+/* ==========================
+    - Banner Card CSS
+==============================*/
+.banner-card {
+    position: relative;
+    margin-bottom: 0;
+    &-image {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        img {
+            width: 100%;
+            height: auto;
+            transition: all 0.3s ease-in-out;
+            object-fit: cover;
+        }
+    }
+
+    &--top-corner {
+        & .banner-card-image {
+            border-radius: 500px 500px 0 0;
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    &-content {
+        &-bottom {
+            bottom: 30px;
+            @media #{$large-mobile, $tablet-device, $laptop-device} {
+                bottom: 20px;
+            }
+        }
+        &-left {
+            left: 30px;
+            @media #{$large-mobile, $tablet-device, $laptop-device} {
+                left: 20px;
+            }
+        }
+        &-top {
+            top: 30px;
+            @media #{$large-mobile, $tablet-device, $laptop-device} {
+                top: 20px;
+            }
+        }
+        &-right {
+            right: 30px;
+            @media #{$large-mobile, $tablet-device, $laptop-device} {
+                right: 20px;
+            }
+        }
+    }
+    &-animation-one {
+        &:hover {
+            .banner-card-image {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        } 
+    }
+    &-animation-one{
+        display: block;
+        transition: all 0.3s ease-in-out;
+        img {
+            transform: scale(1);
+        }
+    }
+    &-button {
+        display: inline-block;
+        padding-bottom: 5px;
+        font-size: calc(1.2rem + 0.19vw);
+        color: $primary;
+        position: relative;
+        &::after {
+            content: "";
+            width: 40px;
+            height: 2px;
+            background: #313030;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transition: all .3s ease-in-out;
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+}
+.banner-card.banner-five .btn-rounde-circle{
+    height: 40px;
+    width: 40px;
+}
+.small-device-image-large {
+    @media #{$large-mobile} {
+        img {
+            height: 270px;
+        }
+    }
+}
+
+
+.banner-product-image {
+    position: relative;
+    overflow: hidden;
+    & a {
+         display: block;
+         & img {
+              width: 100%;
+         }
+         &:hover {
+              transform: scale(1.05);
+         }
+    }
+    .product-banner-title {
+         position: absolute;
+         z-index: 99;
+         top: 60px;
+         left: 90px;
+         @media #{$desktop-device}{
+              left: 40px;
+              top: 40px;
+         }
+         @media #{$tablet-device,$large-mobile}{
+              left: 30px;
+              top: 30px;
+         }
+    }
+}
+.banner-images-one {
+    overflow: hidden;
+    position: relative;
+    .thumbnail {
+         display: block;
+         
+    }
+    .banner-title {
+        position: absolute;
+        z-index: 99;
+        top: 40px;
+        left: 40px;
+        h3 {
+            font-weight: 600;
+        }
+        
+        @media #{$tablet-device,$large-mobile}{
+            top: 40px;
+            left: 30px;
+        }
+    }
+    &:hover {
+       .thumbnail {
+             img {
+                  transform: scale(1.04);
+             }
+         }  
+         .banner-title {
+              .text-btn-normal {
+                   color: #333;
+              }
+         }
+    }
+    .text-btn-normal {
+         &:hover {
+              color: #333;
+         }
+    }
+}
+
+.banner-area-box {
+    .banner-inner-box {
+        margin-top: -135px;
+        background: #fff;
+        padding: 0 15px;
+        position: relative;
+        z-index: 9;
+        @media #{$large-mobile}{
+            margin-top: 35px;
+        }
+    }
+}
+

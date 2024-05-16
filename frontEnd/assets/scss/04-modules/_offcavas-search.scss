@@ -1,0 +1,90 @@
+/* ==========================
+    - Offcanvas Search CSS
+==============================*/
+
+.offcanvas-search {
+    &-area {
+        &.offcanvas-top {
+            height: 290px;
+        }
+    }
+    &-wrap {
+        padding: 30px 15px;
+    }
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 15px;
+        & .btn-close {
+            outline: none;
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+    &-body {
+        padding-top: 15px;
+    }
+    &-box {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+    &-form {
+        position: relative;
+        margin-bottom: 30px;
+    }
+    &-input {
+        width: 100%;
+        height: 80px;
+        border: none;
+        border-bottom: 2px solid #222;
+        border-radius: 0;
+        padding: 0 15px;
+        padding-right: 80px;
+        font-size: 30px;
+        color: #333;
+        &::placeholder {
+            color: #555;
+        }
+        @media #{$large-mobile} {
+            height: 60px;
+            font-size: 20px;
+        }
+    }
+    &-submit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 80px;
+        border: none;
+        background-color: transparent;
+        color: #333;
+        font-size: 30px;
+        &:hover {
+            background-color: transparent;
+            color: #333;
+        }
+        @media #{$large-mobile} {
+            height: 60px;
+            font-size: 20px;
+        }
+    }
+    &-content {
+
+    }
+    &-keywords-list {
+
+    }
+    &-key-title {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: $dark;
+    }
+    &-popular {
+
+    }
+    
+}

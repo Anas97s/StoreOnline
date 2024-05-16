@@ -1,0 +1,282 @@
+/*----------------------------------
+- Main Menu
+-----------------------------------*/
+
+.main-menu {
+    display: flex;
+    &-item {
+        padding: 0px 15px;
+        @media #{$laptop-device} {
+            padding: 0 10px;
+        }
+        &:first-child {
+            padding-left: 0;
+        }
+        &.active {
+            .main-menu-link {
+                color: #000000;
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &-link {
+        display: block;
+        color: #000000;
+        padding: 30px 0px;
+        position: relative;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.18;
+        transition: all 0s ease-in-out;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 14px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #000000;
+            transition: all 0.3s ease-in-out;
+        }
+        &:hover {
+            color: #000000;
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
+.nav-menu-white {
+    & .main-menu {
+        &-item {
+            &.active {
+                .main-menu-link {
+                    color: $white;
+                }
+            }
+        }
+        &-link {
+            color: $white;
+            &::before {
+                background-color: $white;
+            }
+            &:hover {
+                color: $white;
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.menu-label {
+    font-size: 11px;
+    text-transform: capitalize;
+    position: absolute;
+    top: -9px;
+    padding: 0 5px;
+    color: #f1f1f1;
+    border-radius: 2px;
+    line-height: 20px;
+    font-weight: 400;
+    z-index: 100;
+    white-space: nowrap;
+    background: #282828;
+    &::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-top-width: 4px;
+        border-bottom-width: 0;
+        border-right-width: 7px;
+        border-left-width: 0;
+        border-top-color: transparent;
+        border-left-color: transparent !important;
+        border-right-color: transparent !important;
+        border-bottom-color: transparent !important;
+        border-color: #282828;
+    }
+}
+/*----------------------------------
+- Submenu
+-----------------------------------*/
+
+.has-children {
+    position: relative;
+    &:hover {
+        & > .submenu {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        & .megamenu--mega-lavel-2 {
+            &.megamenu {
+                transform: translateY(0);
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    &--mega {
+        position: inherit;
+        &:hover {
+            .megamenu {
+                transform: translateY(0);
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    
+}
+.has-children, 
+.has-children--mega {
+    & > .main-menu-link {
+        position: relative;
+        &::after {
+            position: static;
+            margin-left: 5px;
+            font-family: $icon-font-family;
+            content: "\f078";
+            font-weight: 600;
+            font-size: 10px;
+            vertical-align: middle;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
+// - Submenu CSS
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 2px 29px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    transform: translateY(50px);
+    transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: 0.2s;
+    transition-duration: 0.4s;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 220px;
+    padding: 20px 0;
+    border: 1px solid #eaeaea;
+    z-index: 3;
+    &-link {
+        padding: 2px 15px;
+        color: $black;
+        font-size: 16px;
+        display: block;
+        position: relative;
+    }
+    & > .has-children {
+        position: relative;
+        &::after {
+            position: absolute;
+            margin-left: 5px;
+            content: "\f078";
+            font-family: $icon-font-family;
+            font-weight: 600;
+            font-size: 10px;
+            vertical-align: middle;
+            transition: all 0.3s ease-in-out;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    & .submenu {
+        top: 0px;
+        left: 100%;
+        right: auto;
+        & > .has-children {
+            position: relative;
+            &::after {
+                position: static;
+                margin-left: 5px;
+                content: "\f078";
+                font-family: $icon-font-family;
+                font-weight: 600;
+                font-size: 10px;
+                vertical-align: middle;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+    & > li {
+        position: relative;
+        &:hover {
+            &>.submenu {
+                transform: translateY(0);
+                visibility: visible;
+                opacity: 1;
+                z-index: 9;
+            }
+        }
+    }
+    
+}
+/*---------------------------
+ - Megamenu CSS
+-----------------------------*/
+
+.megamenu {
+    position: absolute;
+    left: 0;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 2px 29px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    transform: translateY(50px);
+    transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: 0.2s;
+    transition-duration: 0.4s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99999;
+    &--mega {
+        width: 100%;
+        left: 0;
+        right: 0;
+        &-inner {
+            max-width: 1400px;    
+            margin: auto;
+            padding: 35px 15px 30px;
+            display: flex;
+            // justify-content: space-between;
+        }
+        &-lavel-2 {
+            width: 580px;
+            padding: 20px 15px;
+            display: flex;
+            @media #{$laptop-device} {
+                margin-left: -134px;
+            }
+        }
+    }
+    .megamenu-item {
+        flex-grow: 1;
+        flex-basis: 0;
+        padding: 15px;
+    }
+    &-title {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    &-link {
+        padding: 2px 0px;
+        color: $black;
+        font-size: 16px;
+        display: block;
+        position: relative;
+    }
+}

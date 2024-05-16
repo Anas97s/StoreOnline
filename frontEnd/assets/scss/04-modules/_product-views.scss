@@ -1,0 +1,70 @@
+/* ==========================
+    - Product View CSS
+==============================*/
+.shop-view-item {
+    &-grid {
+        & .product {
+            &-card-list-view-action {
+                display: none;
+            }
+        }
+    }
+    &-list {
+        & .product {
+            &-card {
+                display: flex;
+                @media #{$small-mobile} {
+                    flex-direction: column;
+                }
+                &-thumb-area {
+                    flex: 0 0 31.43%;
+                    max-width: 31.43%;
+                    @media #{$large-mobile} {
+                        flex: 0 0 41.43%;
+                        max-width: 41.43%;
+                    }
+                    @media #{$small-mobile} {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+                }
+                &-content {
+                    padding: 0;
+                    padding-left: 30px;
+                    padding-top: 12px;
+                    flex: 0 0 68.57%;
+                    max-width: 68.57%;
+                    @media #{$large-mobile} {
+                        flex: 0 0 58.43%;
+                        max-width: 58.43%;
+                    }
+                    @media #{$small-mobile} {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        padding-left: 0px;
+                        padding-top: 20px;
+                    }
+                }
+                &-price{
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+                &:hover {
+                    & .product-card-price {
+                        opacity: 1;
+                        transform: translateY(0px);
+                    }
+                    & .product-card-box-cart {
+                        opacity: 0;
+                        transform: translateY(0px);
+                    }
+                    .product-card-content-hover {
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        
+    }
+}

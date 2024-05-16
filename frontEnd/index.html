@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+
+        
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>EcoDuft</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="Googlebot" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.png">
+
+    <!-- Font CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&family=Kalnia:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Like Bootstrap & Icon Font -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+    <!-- All Plugins CSS Files -->
+    <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- Header Top Area Start -->
+        <div class="header-top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col py-2 py-lg-0 d-flex flex-column align-items-center flex-md-row justify-content-center justify-content-md-between">
+                        <div class="header-top-area-left-side d-flex">
+                            <!-- social Share Area -->
+                            <div class="social-share d-flex gap-2 header-top-area-left-side-item">
+                                <a class="social-share-link instagram" href="https://instagram.com/" target="_blank" aria-label="instagram">
+                                    <i class="fa-brands fa-instagram fa-spin fa-lg"></i>
+                                </a>
+                                <a class="social-share-link whatsapp" href="https://instagram.com/" target="_blank" aria-label="whatsapp">
+                                    <i class="fab fa-whatsapp fa-spin fa-lg"></i>
+                                </a>
+                                <a class="social-share-link tiktok" href="https://tiktok.com/@ecoduft" target="_blank" aria-label="tiktok">
+                                    <i class="fab fa-tiktok fa-spin fa-lg"></i>
+                                </a>
+                            </div><!-- social Share Area -->
+                        </div>
+
+                        
+                        <div>
+                            <!-- Logo Start -->
+                            <div class="logo text-center text-lg-start">
+                                <a href="index.html">
+                                    <h3>EcoDuft</h3>
+                                </a>
+                            </div>
+                            <!-- Logo End -->
+                        </div>
+
+
+                        <div class="header-top-area-right-side d-flex">
+                            <div class="header-top-area-right-side-item">
+                                <a href="#login-form-popup-actiove" data-bs-toggle="modal" id="loginLink">Anmelden </a>
+                                <a href="my-account.html" id="profile">
+                                    <i class="fa-regular fa-user fa-2x" ></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <header class="hader-bottom-area sticky-header">
+            <!-- Header Bottom Area Start -->
+            <div class="hader-bottom-area sticky-header">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-4 col-lg-3 order-2 order-lg-1">
+                            
+                        </div>
+                        <div class="col-4 col-lg-6 order-1 order-lg-2">
+                            <!-- Search Button Start -->
+                            <button class="header-action-item d-md-none" title="Search" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button> <!-- Search Button End -->
+                        </div>
+                        <div class="col-4 col-lg-3 order-3 order-lg-3">
+                            <!-- Heaer Action Area Start -->
+                            <div class="header-action d-flex justify-content-end">
+                                <button class="header-action-item d-none d-md-block" title="Search" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-search">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                                <a href="wishlist.html" class="header-action-item" title="Wishlist">
+                                    <i class="fa-regular fa-heart fa-lg"></i>
+                                    <span class="header-action-item-count-wishlist">3</span>
+                                </a>
+                                <button class="header-action-item" title="Cart Bag" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart">
+                                    <svg width="28" height="28" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 20a1 1 0 1 0 0 2 1 1 0 1 0 0-2z"></path>
+                                        <path d="M20 20a1 1 0 1 0 0 2 1 1 0 1 0 0-2z"></path>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                    </svg>
+                                    <span class="header-action-item-count-cart"></span>
+                                </button>
+                            </div> <!-- Heaer Action Area End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header Bottom Area End -->
+
+        </header>
+    </header>
+
+
+    <main>
+        <!-- Product Section Start -->
+        <section class="product-section section-space-ptb">
+            <div class="container">
+                <div class="nav product-category-tab-list justify-content-center mt-30" role="tablist">
+                    <button class="product-category-tab-link active" data-bs-toggle="tab" data-bs-target="#tab-1" type="button" role="tab">
+                        Herrendüfte
+                    </button>
+                    <button class="product-category-tab-link" data-bs-toggle="tab" data-bs-target="#tab-2" type="button" role="tab">
+                        Damendüfte
+                    </button>
+                    <button class="product-category-tab-link" data-bs-toggle="tab" data-bs-target="#tab-3" type="button" role="tab">
+                        Unisexdüfte
+                    </button>
+                </div>
+
+                <!--Men-->
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" tabindex="0">
+                        <div class="container-shop">
+                            <div class="row row-cols-3 row-cols-sm-2 row-cols-md-3 row-cols-lg-3">
+                                <div class="product-card">
+                                    <div class="product-card-thumb-area">
+                                        <a href="product-details.html" class="product-card-thumb">
+                                            <img class="product-card-thumb-primary" src="assets/images/products/product-1.jpg" alt="Product Image primary 1" width="340" height="320">
+                                            
+                                        </a>
+                                        <button class="product-card-action-quickview" data-bs-target="#product-modal-active" data-bs-toggle="modal" >Zum Produkt</button>
+                                        <ul class="product-card-action-links">
+                                            <li class="product-card-action-item">
+                                                <a href="" class="product-card-action-link" aria-label="wishlist">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h4 class="product-card-title">
+                                            <a href="product-details.html"></a>
+                                        </h4>
+                                        <div class="product-card-price">
+                                            <span class="visually-hidden">Price</span>
+                                            <span class="product-card-regular-price">€</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Women-->
+                    <div class="tab-pane fade" id="tab-2" role="tabpanel" tabindex="0">
+                        <div class="container-shop">
+                            <div class="row row-cols-3 row-cols-sm-2 row-cols-md-3 row-cols-lg-3">
+                                <div class="product-card">
+                                    <div class="product-card-thumb-area">
+                                        <a href="product-details.html" class="product-card-thumb">
+                                            <img class="product-card-thumb-primary" src="assets/images/products/product-1.jpg" alt="Product Image primary 1" width="340" height="320">
+                                            
+                                        </a>
+                                        <button class="product-card-action-quickview" data-bs-target="#product-modal-active" data-bs-toggle="modal" >Quick View</button>
+                                        <ul class="product-card-action-links">
+                                            <li class="product-card-action-item">
+                                                <a href="" class="product-card-action-link" aria-label="wishlist">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h4 class="product-card-title">
+                                            <a href="product-details.html"></a>
+                                        </h4>
+                                        <div class="product-card-price">
+                                            <span class="visually-hidden">Price</span>
+                                            <span class="product-card-regular-price">€</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Unisex-->
+                    <div class="tab-pane fade" id="tab-3" role="tabpanel" tabindex="0">
+                        <div class="container-shop">
+                            <div class="row row-cols-3 row-cols-sm-2 row-cols-md-3 row-cols-lg-3">
+                                <div class="product-card">
+                                    <div class="product-card-thumb-area">
+                                        <a href="product-details.html" class="product-card-thumb">
+                                            <img class="product-card-thumb-primary" src="assets/images/products/product-1.jpg" alt="Product Image primary 1" width="340" height="320">
+                                            
+                                        </a>
+                                        <button class="product-card-action-quickview" data-bs-target="#product-modal-active" data-bs-toggle="modal" >Quick View</button>
+                                        <ul class="product-card-action-links">
+                                            <li class="product-card-action-item">
+                                                <a href="" class="product-card-action-link" aria-label="wishlist">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-card-content">
+                                        <h4 class="product-card-title">
+                                            <a href="product-details.html"></a>
+                                        </h4>
+                                        <div class="product-card-price">
+                                            <span class="visually-hidden">Price</span>
+                                            <span class="product-card-regular-price">€</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+
+    <!-- Sign in/up screen Start-->
+    <div class="modal fade" id="login-form-popup-actiove" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered sign-in-modal">
+            <div class="modal-content">
+                <button type="button" class="btn-close position-absolute end-0 p-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- Logo Start -->
+                <div class="logo text-center pt-2">
+                    <a href="home.html">
+                        <h3>EcoDuft</h3>
+                    </a>
+                </div><!-- Logo End -->
+                <div class="sign-in-modal-body px-4 pb-10">
+                    <div class="modal-box-wrapper">
+                        <ul class="nav sign-in-tablist" role="tablist">
+                            <li class="sign-in-tab--item nav-item" role="presentation">
+                                <a class="sign-in-tab--link active" data-bs-toggle="tab" href="#tab_list_06" role="tab" aria-selected="true">Anmelden</a>
+                            </li>
+                            <li class="sign-in-tab--item nav-item" role="presentation">
+                                <a class="sign-in-tab--link" data-bs-toggle="tab" href="#tab_list_07" role="tab" aria-selected="false" tabindex="-1">Registrieren</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="tab_list_06" role="tabpanel">
+                                <form action="#" class="account-form-box max-w-400 mx-auto">
+                                    <div class="single-input-gruop">
+                                        <label class="single-input-label" for="login-username">E-Mail adresse*</label>
+                                        <input class="single-input-fild" type="email" id="login-username">
+                                    </div>
+                                    <div class="single-input-gruop">
+                                        <label class="single-input-label" for="login-password">Passwort*</label>
+                                        <input class="single-input-fild" type="password" id="login-password">
+                                        <span class="error-message" id="error-password"></span>
+                                    </div>
+                                    <div class="checkbox-wrap mt-3 mb-4 d-flex align-items-center justify-content-between fs-16">
+                                        
+                                        <a href="#">Passwort vergessen?</a>
+                                    </div>
+                                    <div class="button-box">
+                                        <a href="my-account.html" class="btnLogIn btn-full btn-md btn-primary">Anmelden</a>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="tab_list_07" role="tabpanel">
+                                <form action="#" class="account-form-box  max-w-400 mx-auto">
+                                    <div class="single-input-gruop">
+                                        <label class="single-input-label" for="register-name">Name*</label>
+                                        <input class="single-input-fild" type="text" id="register-name">
+                                        <span class="error-message" id="error-name"></span>
+                                    </div>
+                                    <div class="single-input-gruop">
+                                        <label class="single-input-label" for="register-email">E-Mail adresse*</label>
+                                        <input class="single-input-fild" type="email" id="register-email">
+                                        <span class="error-message" id="error-email"></span>
+                                    </div>
+                                    <div class="single-input-gruop">
+                                        <label class="single-input-label" for="register-password">Passwort*</label>
+                                        <input class="single-input-fild" type="password" id="register-password">
+                                        <span class="error-message" id="error-pass"></span>
+                                    </div>
+                                    <p class="mt-3 text-center">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#" class="privacy-policy-link" target="_blank">privacy policy</a>.</p>
+                                    <div class="button-box mt-4">
+                                        <button type="submit" class="btnSignUp btn-full btn-primary btn-md">Registrieren</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- Sign in/up screen End -->
+
+    <!-- Cart Screen Start-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-cart">
+        <div class="offcanvas-cart-wrap">
+            <div class="offcanvas-cart-header">
+                <div class="offcanvas-cart-title">
+                    Dein Warenkorb
+                </div>
+                <button type="button" class="btn-close text-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="cart-product">
+
+                    <!-- Cart Product Item Start -->
+                    
+                    <!-- Cart Product Item End -->
+                </div>
+                <div class="offcanvas-cart-footer">
+                    <div class="mini-cart-total">
+                        <strong class="mini-cart-subtotal">Summe</strong>
+                        <span class="mini-cart-amount">
+                        <bdi><span class="currency-symbol">€</span></bdi>
+                        </span>
+                    </div>
+                    <div class="cart-button-action-wrap gap-2 d-flex flex-column">
+                        <a href="cart.html" class="btn-outline-dark-cart btn btn-full btn-lg">Warenkorb zeigen</a>
+                        <a href="checkout.html" class="btn-outline-dark btn btn-full btn-lg">Jetzt zur Kasse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cart Screen End-->    
+
+    <!--Search Screen Start-->
+    <div class="offcanvas offcanvas-top offcanvas-search-area" tabindex="-1" id="offcanvas-search">
+        <div class="offcanvas-search-wrap">
+            <div class="offcanvas-search-header">
+                <div class="offcanvas-search-title">
+                    <span class="visually-hidden">Search</span>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-search-body">
+                <div class="offcanvas-search-box">
+                    <form action="#" class="offcanvas-search-form">
+                        <input type="text" placeholder="Search..." class="offcanvas-search-input">
+                        <button type="submit" class="offcanvas-search-submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Search Screen End-->
+
+  
+    <!-- Product description Modal screen Start -->
+    <div class="modal fade" id="product-modal-active" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered product-quick-view-modal">
+            <div class="modal-content">
+                <button type="button" class="btn-close position-absolute end-0 p-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="product-item-details px-3 py-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="swiper product-quickview-lg-active">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img class="w-full" src="assets/images/large-products/large-product-01.jpg" alt="image" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="col-md-6">
+                           <div class="product-item-details-box">
+                            <!--Product Name-->
+                            <h4 class="product-item-details-title">Loading...</h4>
+                            <h4 class="product-item-details-id" style="display: none;">Loading...</h4>
+                            <!--Rating stars-->
+                            <div class="product-item-details-rating d-flex align-items-center gap-2 text-black">
+                                <div class="product-item-details-rating-list d-flex">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <a href="#" class="fs-16">(12 customer review)</a> 
+                            </div>
+
+                            <div class="product-card-price mt-2">
+                                <span class="product-card-old-price"><del>Loading...</del></span>
+                                <span class="product-card-regular-price">Loading...</span>
+                            </div>
+
+                            <!--Product details-->
+                            <p class="product-item-details-description mt-2 fs-16">Loading...</p>
+
+                            <div class="product-item-stock in-stock mb-3">
+                                <span class="stock-label">Verfügbar:</span>
+                                <span class="product-item-stock-in"> Auf Lager</span>
+                            </div>
+
+                            <div class="product-item-action-box d-flex gap-2 align-items-center">
+                                <form action="#" class="product-item-quantity">
+                                    <button class="product-item-quantity-decrement product-item-quantity-button" type="button">-</button>
+                                    <input type="text" class="product-item-quantity-input" value="1">
+                                    <button class="product-item-quantity-increment product-item-quantity-button" type="button">+</button>
+                                </form>
+                                <button class="addCartBtn btn-primary btn-lg">In den Warenkorb</button>
+                                
+                            </div>
+                            <a href="wishlist.html" class="product-item-wishlist-action mt-3">
+                                <i class="fa-regular fa-heart"></i><span>Zur Wunschliste hinzufügen</span>
+                            </a>
+                            <div class="social-share-wrap d-flex gap-1 mt-3">
+                                <p class="fs-16">Teilen: </p>
+                                <div class="social-share social-share-in-color d-flex gap-2">
+                                    <a class="social-share-link facebook" href="https://www.facebook.com/" target="_blank" aria-label="facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a class="social-share-link twitter" href="https://twitter.com/" target="_blank" aria-label="twitter">
+                                        <i class="fa-brands fa-x-twitter"></i>
+                                    </a>
+                                    <a class="social-share-link instagram" href="https://instagram.com/" target="_blank" aria-label="instagram">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- Product description Modal screen End -->
+
+
+    <div id="toast" class="toast"></div>
+
+    <!-- Footer Area Start -->
+    <footer class="footer-area">
+        <div class="footer-top-area bg-dark section-space-pt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-7 col-lg-8">
+                        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-3">
+                            <div class="col">
+                                <!-- Footer Widget Start -->
+                                <div class="footer-widget">
+                                    <!-- Logo Start -->
+                                    <div class="fotter-logo text-left">
+                                        <a href="index.html">
+                                            <h3 style="color: white;">EcoDuft</h3>
+                                        </a>
+                                    </div><!-- Logo Start -->
+                                    
+                                </div> <!-- Footer Widget End -->
+                            </div>
+                            <div class="col">
+                                <!-- Footer Widget Start -->
+                                <div class="footer-widget">
+                                    <h5 class="footer-widget--title text-white" title="Information">Information</h5>
+                                    <ul class="widget--menu">
+                                        <li class="widget--menu-item"><a href="about-us.html" class="widget--menu-link">About us</a></li>
+                                        <li class="widget--menu-item"><a href="contact-us.html" class="widget--menu-link">Contact us</a></li>
+                                        <li class="widget--menu-item"><a href="checkout.html" class="widget--menu-link">Privacy Policy</a></li>
+                                    </ul>
+                                </div> <!-- Footer Widget End -->
+                            </div>
+                            <div class="col">
+                                <!-- Footer Widget Start -->
+                                <div class="footer-widget">
+                                    <h5 class="footer-widget--title text-white" title="Help">Account</h5>
+                                    <ul class="widget--menu">
+                                        <li class="widget--menu-item"><a href="wishlist.html" class="widget--menu-link">Wishlist</a></li>
+                                        <li class="widget--menu-item"><a href="#" class="widget--menu-link" id="myAccountLink">My Account</a></li>
+                                    </ul>
+                                </div> <!-- Footer Widget End -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-4">
+                        <!-- Footer Widget Start -->
+                        <div class="footer-widget">
+                            <h5 class="footer-widget--title text-white" title="Sign Up Now & Get 10% Off">Sign Up Now & Get 15% Off</h5>
+                            <div class="widget-newsletter">
+                                <p class="fs-16 mb-3 text-white">Be the first to hear about special offers, new arrivals & more.</p>
+                                <form action="#" class="widget-newsletter-from mb-4">
+                                    <input type="text" class="widget-newsletter-input" placeholder="Enter your email address">
+                                    <button class="btn btn-primary btn-lg widget-newsletter-button btn-rounde-2" type="submit">Subscribe</button>
+                                </form>
+                                <p class="text-white">I have read the <a href="#" class="text-black fw-medium text-decoration-underline text-white" target="_blank">Privacy Policy</a>. Offer details, financial incentives and exclusions available here.</p>
+                            </div>
+                        </div><!-- Footer Widget End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom bg-dark border-dark-top-1 py-3">
+            <div class="container-xxl">
+                <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+                    <p class="text-white mb-md-0">Copyright &copy; <a href="#" target="_blank">EcoDuft</a>. All Rights Reserved.</p>
+                    <div class="payment">
+                        <img src="assets/images/others/payment.png" width="286" height="23" alt="payment image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
+
+
+    <!-- Vendors JS -->
+    <script src="./assets/js/modernizr-3.11.7.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugins JS -->
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+
+    <!-- Activation JS -->
+    <script src="./assets/js/homeScreenFetch.js"></script>
+    <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/wishList.js"></script>
+    <script src="./assets/js/sign.js"></script>
+</body>
+
+</html>

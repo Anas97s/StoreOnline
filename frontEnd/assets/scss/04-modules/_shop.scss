@@ -1,0 +1,135 @@
+/* ==========================
+    - Shop CSS
+==============================*/
+.shop {
+    &-toolbar {
+        display: flex;
+        justify-content: space-between;
+        @media #{$small-mobile} {
+            flex-direction: column;
+        }
+        &-left-side,
+        &-right-side {
+            margin-bottom: 5px;
+            align-items: center;
+            display: flex;
+        }
+    }
+
+    &-display {
+        border: none;
+        background-color: transparent;
+        font-size: 18px;
+        vertical-align: top;
+        margin-right: 5px;
+        padding: 0;
+        &.active {
+            color: $primary;
+        }
+    }
+    &-products-result-count {
+        margin: 0;
+        font-size: 16px;
+        line-height: 22px;
+        border-left: 1px solid #c1c1c1;
+        margin-left: 20px;
+        padding-left: 20px;
+        display: inline-block;
+        @media #{$large-mobile} {
+            padding-left: 10px;
+            margin-left: 4px;
+        }
+    }
+    &-selector-orderby {
+        border: none;
+        border-bottom: 1px solid #c1c1c1;
+        padding: 5px 0;
+        font-size: 16px;
+    }
+}
+
+.button-show-filter {
+    padding: 0;
+    text-transform: capitalize;
+    margin-right: 30px;
+    line-height: 26px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-right: 30px;
+    border: none;
+    border-right: 1px solid #c1c1c1;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: transparent;
+    @media #{$large-mobile} {
+        padding-right: 10px;
+        margin-right: 10px;
+    }
+}
+
+
+// expand content Css
+
+.category-description {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    &.expanded-content {
+        overflow: visible;
+        max-height: none;
+        padding-bottom: 30px;
+    }
+}
+.expand-content {
+    overflow: hidden;
+    max-height: 120px;
+    position: relative;
+}
+  
+.block-expand-overlay {
+    background: linear-gradient(to bottom, transparent, rgb(248, 248, 248));
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: visible;
+}
+  
+.expanded-content .block-expand-overlay {
+    background: 0 0;
+}
+  
+.block-expand-overlay > .block-expand {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 25px;
+    padding: 0 15px;
+    background: #222;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+  
+.block-expand {
+    &::after {
+        font-family: $icon-font-family;
+        content: "\f078";
+        font-weight: 600;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 8px;
+        font-size: 9px;
+    }
+    &.remove::after {
+        transform: rotate(180deg);
+    }
+}
+

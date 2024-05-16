@@ -1,0 +1,52 @@
+/*----------------------------
+    - Contact Us Css
+------------------------------*/
+
+.contact-us-google-map {
+    width: 100%;
+    height: 500px;
+}
+.contact-info {
+    &-item {
+        & ~ .contact-info-item {
+            margin-top: 20px;
+        }
+        display: flex;
+        align-items: center;
+        &-icon {
+            margin-right: 10px;
+            font-size: 15px;
+            color: $white;
+            display: inline-block;
+            vertical-align: middle;
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: $dark;
+            transition: all .3s ease-in-out;
+        }
+        &-title {
+            font-size: 16px;
+            color: $dark;
+        }
+    }
+}
+
+.contact-form {
+    &-item {
+        margin-bottom: 20px;
+    }
+    &-input {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        border: none;
+        border-bottom: 2px solid #ebebeb;
+        padding: 10px 0;
+    }
+    & textarea {
+        height: 90px;
+    }
+}

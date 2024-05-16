@@ -1,0 +1,83 @@
+.mobile-menu {
+    &-item {
+        display: block;
+        border-top: 1px solid #eee;
+        &:first-child {
+            border-top: 0;
+        }
+    }
+    &-link {
+        display: block;
+        padding: 10px 0px;
+        line-height: 24px;
+        color: #333;
+        font-size: 16px;
+        font-weight: 400;
+        position: relative;
+        
+        &:hover,
+        &.active {
+            & > .menu-expand {
+                background-color: $primary;
+                color: #fff;
+            }
+        }
+        & > .menu-expand {
+            position: absolute;
+            right: 0;
+            background: #eee;
+            width: 30px;
+            height: 27px;
+            line-height: 27px;
+            text-align: center;
+            border-radius: 4px;
+            color: #333;
+            font-size: 10px;
+        }
+    }
+    
+    &--mega,
+    .sub-menu {
+        display: none;
+        padding: 0 0 0 15px;
+        border-top: 1px solid #eee;
+        li {
+            &:first-child {
+                .mega-menu-link,
+                .sub-menu-link {
+                    border-top: 0;
+                }
+            }
+            & .menu-expand {
+                position: absolute;
+                right: 0;
+                background: #eee;
+                width: 25px;
+                height: 24px;
+                line-height: 26px;
+                text-align: center;
+                border-radius: 4px;
+                color: #333;
+                font-size: 10px;
+            }
+            .mega-menu-link,
+            .sub-menu-link {
+                display: block;
+                padding: 8px 0px;
+                line-height: 24px;
+                color: #333;
+                font-size: 14px;
+                font-weight: 400;
+                position: relative;
+                border-top: 1px solid #eee;
+                &:hover,
+                &.active {
+                    & > .menu-expand {
+                        background-color: $primary;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Accept a payment</title>
+    <meta name="description" content="A demo of a payment on Stripe" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./assets/css/checkout.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./assets/js/checkout.js" defer></script>
+    
+  </head>
+
+  <body>
+    
+    <div class="centered-container">
+      <form id="address-form" class="custom-address-form">
+        <div id="address-element" class="address-elements-container">
+          <!-- Elements will create form elements here -->
+        </div>
+        <div id="email-element">
+          <h3>Email</h3>
+          <input type="text" id="email" placeholder="E-Mail" />
+        </div>
+      </form>
+
+      <!-- Display a payment form -->
+      <form id="payment-form" class="custom-payment-form">
+        <h3 id="total" class="total-amount-display"></h3>
+        <div id="payment-element" class="payment-elements-container">
+          <!-- Stripe.js injects the Payment Element -->
+        </div>
+        <button id="submit" class="payment-submit-button">
+          <div class="spinner hidden" id="spinner"></div>
+          <span id="button-text">Bezahlen</span>
+        </button>
+        <div id="payment-message" class="payment-message hidden"></div>
+      </form>
+    </div>
+
+    <script src="./assets/js/cart.js"></script>
+  </body>
+</html>

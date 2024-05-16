@@ -1,0 +1,75 @@
+
+/* ==========================
+    - Category Card Css
+==============================*/
+
+.category-item-thum {
+    max-height: 240px;
+    max-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    img {
+        border-radius: 100%;
+        width: 100%;
+        transform: scale(1.0);
+    }
+}
+.single-category-item {
+    text-align: center;
+    margin-top: 40px;
+    .content {
+        margin-top: 25px;
+        .title {
+            font-weight: 600;
+            line-height: 1.125;
+            margin: 0 0 10px;
+        }
+        .number {
+            font-size: 16px;
+            font-weight: 400;
+            display: block;
+            transition: all .5s ease 0s;
+            color: #999;
+        }
+    }
+    &:hover {
+        .category-item-thum {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+
+.instagram-items-grid {
+    display: grid;
+    grid-auto-columns: min-content;
+    grid-auto-flow: column;
+    width: fit-content;
+    transform: translateX(0);
+    transition: transform 0.6s ease-out;
+    gap: 10px;
+}
+.instagram-item {
+    width: 300px;
+    height: auto;
+    position: relative;
+    transform: perspective(300px) translate3d(0, 0, 0);
+    color: #fff;
+}
+.instagram-items-wrap {
+    animation: scroll-x-animation linear infinite;
+    animation-duration: calc(4s * 8);
+}
+.instagram-items-wrap:hover {
+    animation-play-state: paused;
+}
+@keyframes scroll-x-animation {
+    0% {
+        transform: translate3d(0, 0, 0)
+    }
+    100% {
+        transform: translate3d(calc(-50% - 20px), 0, 0)
+    }
+}

@@ -1,0 +1,41 @@
+/*--------------------------
+    - Countdown Css
+---------------------------- */
+.product-countdown {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    &-item {
+        height: 60px;
+        width: 60px;
+        background-color: #F0F0F0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &--value {
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 500;
+            color: $black;
+            margin-bottom: 6px;
+        }
+        &--label {
+            line-height: 1;
+        }
+    }
+}
+
+
+.outline-countdown {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    .product-countdown-item {
+        background-color: transparent;
+        border: 2px solid $primary;
+        height: 72px;
+        width: 72px;
+        border-radius: 0px 0px 20px 0;
+    }
+}

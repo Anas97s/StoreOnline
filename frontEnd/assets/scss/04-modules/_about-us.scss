@@ -1,0 +1,33 @@
+/* ==========================
+    - About US CSS
+==============================*/
+
+.about-inner-image {
+    &-row {
+        display: flex;
+        gap: 30px;
+        justify-self: center;
+        z-index: 1;
+        position: relative;
+    }
+    &-col {
+        flex-direction: column;
+        display: flex;
+        gap: 30px; 
+    }
+    & > img {
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    &-top-left-right-circle {
+        border-radius: 350px 350px 0 0;
+    }
+    &-bottom-left-right-circle {
+        border-radius: 0px 0px 500px 500px;
+    }
+    &-full-circle {
+        border-radius: 350px;
+    }
+}

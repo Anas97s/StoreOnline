@@ -1,0 +1,71 @@
+/* ==========================
+    - Sale Banner CSS
+==============================*/
+
+.sale-banner4 {
+    height: 100%;
+}
+.sale-banner4 .inner {
+    position: relative;
+    height: 100%;
+}
+.sale-banner4 .inner>img {
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.sale-banner4 .inner .content {
+    position: absolute;
+    z-index: 1;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+.sale-banner4 .inner .content .sub-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.sale-banner5 .inner {
+    position: relative;
+    display: block;
+}
+.sale-banner5 .inner>img {
+    z-index: 1;
+    display: block;
+    width: 100%;
+}
+
+.sale-banner5 .inner .content {
+    position: absolute;
+    z-index: 1;
+    bottom: 50px;
+    left: 50px;
+}
+
+.sale-banner6 .inner {
+    position: relative;
+    display: block;
+}
+
+.sale-banner6 .inner>img {
+    z-index: 1;
+    display: block;
+    width: 100%;
+}
+
+.sale-banner6 .inner .content {
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+}

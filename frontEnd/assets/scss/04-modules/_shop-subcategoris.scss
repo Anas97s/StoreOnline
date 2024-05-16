@@ -1,0 +1,37 @@
+
+/*------------------------------
+    - Shop Subcategoris 
+-------------------------------*/
+
+.shop-category {
+    &-item {
+        margin-top: 10px;
+        text-align: center;
+        &:hover {
+            & .shop-category-thumb {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    &-thumb {
+        display: block;
+        img {
+            border-radius: 100%;
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+            aspect-ratio: 1 / 1;
+        }
+    }
+    &-summary {
+        margin-top: 15px;
+        text-align: center;
+    }
+    &-name {
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+}

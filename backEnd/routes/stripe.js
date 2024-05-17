@@ -28,10 +28,21 @@ router.post("/create-payment-intent", async (req, res) => {
   
   res.send({
     clientSecret: paymentIntent.client_secret,
-    clientBSecret: paymentIntent.amount
+    clientBSecret: paymentIntent.amount,
+    t: process.env.SUCC_PAGE_T
   });
 
 });
+
+function generateRandomString(length){
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters.charAt(randomIndex);
+    }
+    return result;
+}
 
 
 async function formatCartData(cart) {

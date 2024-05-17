@@ -3,7 +3,7 @@ require('dotenv').config();
 
 function isAuthenticated(req, res, next) {
     const token = req.cookies.token;
-    if (!token) return res.status(401).json({message: 'Access denied. No token provided.', isAuthenticated: false});
+    if (!token) return res.status(401).json({message: 'Access denied.', isAuthenticated: false});
   
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         const response = await fetch(`http://localhost:5502/api/user/auth/status`);
         const data = await response.json();
+        startCartTimer();
         const loginLink = document.getElementById('loginLink');
         if (data.isAuthenticated) {
             loginLink.textContent = ''; // Clears the text "Anmelden"

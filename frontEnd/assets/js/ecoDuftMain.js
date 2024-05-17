@@ -9,7 +9,7 @@ async function init(){
         const data = await response.json();
         myAccountlink();
         //Only Admin!
-        if(data.isAuthenticated && data.isAdmin){
+        if(data.isAuthenticated && data.isAdmin && t){
             checkAdmin = true;
             //add new prodcut
             addNewProdcut();

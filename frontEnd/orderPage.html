@@ -193,11 +193,12 @@
     </div> 
     <!-- Sign in/up screen End -->
 
+    <!-- Cart Screen Start-->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-cart">
         <div class="offcanvas-cart-wrap">
             <div class="offcanvas-cart-header">
                 <div class="offcanvas-cart-title">
-                    YOUR CART
+                    Dein Warenkorb
                 </div>
                 <button type="button" class="btn-close text-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -210,19 +211,23 @@
                 </div>
                 <div class="offcanvas-cart-footer">
                     <div class="mini-cart-total">
-                        <strong class="mini-cart-subtotal">Total</strong>
+                        <strong class="mini-cart-subtotal">Summe</strong>
                         <span class="mini-cart-amount">
                         <bdi><span class="currency-symbol">€</span></bdi>
                         </span>
                     </div>
+                    <div id="cart-timer" class="cart-timer" style="color: red;">
+                        <!-- Timer will be displayed here -->
+                    </div>
                     <div class="cart-button-action-wrap gap-2 d-flex flex-column">
-                        <a href="cart.html" class="btn-outline-dark-cart btn btn-full btn-lg">View Cart</a>
-                        <a href="checkout.html" class="btn-outline-dark btn btn-full btn-lg">Checkout</a>
+                        <a href="cart.html" class="btn-outline-dark-cart btn btn-full btn-lg">Warenkorb zeigen</a>
+                        <a href="checkout.html" class="btn-outline-dark btn btn-full btn-lg">Jetzt zur Kasse</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Cart Screen End-->    
 
     <!-- Footer Area Start -->
     <footer class="footer-area">

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function() {
     await init();
+    startCartTimer();
     initializeTabs();
     setupProductQuickView();
 });

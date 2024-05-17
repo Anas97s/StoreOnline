@@ -3,6 +3,7 @@ const stripe = Stripe("pk_test_51PCgVf02m0sUr8hQJR1hSnomACUUWGR6QWOXhxC5enJDJ7V8
     locale: 'de'
 });
 
+let suc_url;
 // The items the customer wants to buy
 const items = getCart();
 
@@ -20,8 +21,9 @@ async function initialize() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ items }),
     });
-    const { clientSecret, clientBSecret} = await response.json(); //the respone from server to JSON!
+    const { clientSecret, clientBSecret, t} = await response.json(); //the respone from server to JSON!
     document.getElementById("total").textContent = "Summe: "  + (clientBSecret / 100).toFixed(2) + " €";
+    suc_url = `http://localhost:5502/orderSucc.html?t=${t}`;
     const appearance = {
         theme: 'stripe',
         variables: {
@@ -65,7 +67,7 @@ async function handleSubmit(e) {
         elements,
         confirmParams: {
         
-        return_url: `http://localhost:5502/orderSucc.html`,
+        return_url: suc_url,
         receipt_email: document.getElementById("email").value,
         },
     });

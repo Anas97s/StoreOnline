@@ -347,7 +347,7 @@
     <!-- Sign in/up screen End -->
 
     
-    <!-- Offcanvas Menu Start -->
+    <!-- Cart Screen Start-->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-cart">
         <div class="offcanvas-cart-wrap">
             <div class="offcanvas-cart-header">
@@ -367,18 +367,23 @@
                     <div class="mini-cart-total">
                         <strong class="mini-cart-subtotal">Summe</strong>
                         <span class="mini-cart-amount">
-                        <bdi>
-                            <span class="currency-symbol">€</span></bdi>
+                        <bdi><span class="currency-symbol">€</span></bdi>
                         </span>
                     </div>
+                    <div id="cart-timer" class="cart-timer" style="color: red;">
+                        <!-- Timer will be displayed here -->
+                    </div>
                     <div class="cart-button-action-wrap gap-2 d-flex flex-column">
-                        <a href="cart.html" class="btn-outline-dark btn btn-full btn-lg">Warenkorb zeigen</a>
+                        <a href="cart.html" class="btn-outline-dark-cart btn btn-full btn-lg">Warenkorb zeigen</a>
                         <a href="checkout.html" class="btn-outline-dark btn btn-full btn-lg">Jetzt zur Kasse</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Cart Screen End-->   
+
+
     <div class="offcanvas offcanvas-top offcanvas-search-area" tabindex="-1" id="offcanvas-search">
         <div class="offcanvas-search-wrap">
             <div class="offcanvas-search-header">

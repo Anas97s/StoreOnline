@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch(`http://localhost:5502/api/user/auth/status`);
         const data = await response.json();
         const loginLink = document.getElementById('loginLink');
+        startCartTimer();
         if (data.isAuthenticated) {
             loginLink.textContent = ''; // Clears the text "Anmelden"
         }
@@ -172,6 +173,7 @@ function updateCartAfterRemoval(productId) {
     updateSubtotal();
     showTotal();
 }
+
 function updateCart() {
     const quantityInputs = document.querySelectorAll('.product-item-quantity-input');
     const cart = getCart();
@@ -186,7 +188,7 @@ function updateCart() {
         }
     });
 
-    localStorage.setItem('cart', JSON.stringify(cart)); // Save the updated cart back to local storage
+    saveCart(cart);// Save the updated cart back to local storage
     updateCartDisplay(); 
     updateSubtotal(); 
     showTotal(); 

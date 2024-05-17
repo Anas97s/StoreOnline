@@ -21,6 +21,7 @@ if (addToCartButton != null) {
                     if(cart.length == 0){
                         if(product.quantity <= productInfo.rest){
                             addToCart(product);
+                            showToast(`${product.quantity}x ${productInfo.name} zum Warenkorb hinzugefügt`);
                         }
                     }else{
                         let choosenQuantity = 0;
@@ -31,8 +32,9 @@ if (addToCartButton != null) {
 
                         if(choosenQuantity <= productInfo.rest){
                             addToCart(product);
+                            showToast(`${product.quantity}x ${productInfo.name} zum Warenkorb hinzugefügt`);
                         }else{
-                            showToast(`You can't add this quantity of product, its more than avaliabe!  you already have ${item.quantity} in your cart!`);
+                            showToast(`Du Kannst diese Produktmenge nicht hinzufügen, es ist mehr als verfügbar! Du hast bereits ${item.quantity} im Warenkorb!`);
                         }
                     }
 
@@ -48,18 +50,19 @@ if (addToCartButton != null) {
 function addToCart(product) {
     let cart = getCart();
     let foundIndex = cart.findIndex(item => item.id === product.id);
+
     if (foundIndex !== -1) {
-        // Product already exists in the cart, update the quantity
         cart[foundIndex].quantity += parseInt(product.quantity, 10);
     } else {
-        // Product does not exist in the cart, add it to the cart
-        cart.push({ ...product, quantity: parseInt(product.quantity, 10) }); 
+        cart.push({ ...product, quantity: parseInt(product.quantity, 10) });
     }
-    saveCart(cart);
+
+    saveCart(cart); // You can pass a specific TTL if needed, e.g., saveCart(cart, 7200000) for 2 hours
     updateCartCount();
     updateCartDisplay();
     updateSubtotal();
 }
+
 
 
 async function getProductInfo(id) {
@@ -97,28 +100,30 @@ document.addEventListener('DOMContentLoaded', () => {
 function createCartCard(id, name, price, quantity) {
     const cartContainer = document.querySelector('.cart-product');
     const cartItem = document.createElement('div');
-    cartItem.classList.add('cart-product-item');
-    cartItem.innerHTML = `
-    <a href="product-details.html?id=${id}&name=${name}" class="cart-product-thum">
-            <img src="assets/images/products/product-1.jpg" alt="Product Cart One">
-        </a>
-        <div class="cart-product-content">
-            <h6 class="cart-product-content-title">
-                <a href="product-details.html?id=${id}&name=${name}">${name}</a>
-            </h6>
-            <div class="cart-product-content-bottom">
-                <span class="cart-product-content-quantity">${quantity} × </span>
-                <span class="cart-product-content-amount">
-                    <bdi>
-                        <span class="visually-hidden">Price:</span>
-                        ${price}
-                    </bdi>
-                </span>
+    if(cartContainer != null){
+        cartItem.classList.add('cart-product-item');
+        cartItem.innerHTML = `
+        <a href="product-details.html?id=${id}&name=${name}" class="cart-product-thum">
+                <img src="assets/images/products/product-1.jpg" alt="Product Cart One">
+            </a>
+            <div class="cart-product-content">
+                <h6 class="cart-product-content-title">
+                    <a href="product-details.html?id=${id}&name=${name}">${name}</a>
+                </h6>
+                <div class="cart-product-content-bottom">
+                    <span class="cart-product-content-quantity">${quantity} × </span>
+                    <span class="cart-product-content-amount">
+                        <bdi>
+                            <span class="visually-hidden">Price:</span>
+                            ${price}
+                        </bdi>
+                    </span>
+                </div>
             </div>
-        </div>
-        <button class="cart-product-close" onclick="removeCartItem(this)">×</button>
-    `;
-    cartContainer.appendChild(cartItem);
+            <button class="cart-product-close" onclick="removeCartItem(this)">×</button>
+        `;
+        cartContainer.appendChild(cartItem);
+    }
 }
 
 async function calculateSubtotal() {
@@ -138,38 +143,50 @@ async function calculateSubtotal() {
 }
 
 function getCart() {
-    // Retrieve cart data from localStorage
-    const cartData = localStorage.getItem('cart');
+    const cartItemStr = localStorage.getItem('cart');
 
-    // Check if cartData is null or not a string
-    if (!cartData || typeof cartData !== 'string') {
-        // If cartData is null or not a string, return an empty array
+    if (!cartItemStr) {
         return [];
     }
 
     try {
-        // Parse the cartData string into an array
-        const cartArray = JSON.parse(cartData);
+        const cartItem = JSON.parse(cartItemStr);
+        const now = new Date();
+        const expiryTime = new Date(parseInt(cartItem.expiry, 10));
+        const timeRemaining = expiryTime - now;
 
-        // Check if cartArray is an array
-        if (!Array.isArray(cartArray)) {
-            // If cartArray is not an array, return an empty array
+        if (timeRemaining <= 0) {
+            localStorage.removeItem('cart');
+            localStorage.removeItem('cartExpiry');
             return [];
         }
 
-        // Return the parsed cartArray
-        return cartArray;
+        return cartItem.value;
     } catch (error) {
         console.error('Error parsing cart data:', error);
-        // If an error occurs during parsing, return an empty array
         return [];
     }
 }
 
 
-function saveCart(cart) {
-    localStorage.setItem('cart', JSON.stringify(cart));
+
+
+function saveCart(cart, ttl = 1800000) { // Default TTL is 30 min
+    const now = new Date();
+    let expiry = localStorage.getItem('Expiry');
+
+    if (!expiry) {
+        expiry = now.getTime() + ttl;
+        localStorage.setItem('Expiry', expiry);
+    }
+
+    const item = {
+        value: cart,
+        expiry: expiry,
+    };
+    localStorage.setItem('cart', JSON.stringify(item));
 }
+
 
 async function removeCartItem(button) {
     const productElement = button.closest('.cart-product-item');
@@ -196,15 +213,17 @@ async function removeCartItem(button) {
 async function updateSubtotal() {
     const subtotalAmountElement = document.querySelector('.mini-cart-amount bdi');
 
-    try {
-        // Calculate the subtotal and wait for the promise to resolve
-        const subtotal = await calculateSubtotal();
-        subtotalAmountElement.textContent = `${subtotal.toFixed(2)} €`;
-        return subtotal;  
-    } catch (error) {
-        console.error('Error updating subtotal:', error);
-        
-        return 0;  
+    if(subtotalAmountElement != null){
+        try {
+            // Calculate the subtotal and wait for the promise to resolve
+            const subtotal = await calculateSubtotal();
+            subtotalAmountElement.textContent = `${subtotal.toFixed(2)} €`;
+            return subtotal;  
+        } catch (error) {
+            console.error('Error updating subtotal:', error);
+            
+            return 0;  
+        }
     }
 }
 
@@ -254,4 +273,50 @@ function showToast(message) {
     setTimeout(function(){ 
         toast.className = toast.className.replace("show", ""); 
     }, 3000); // 3000ms = 3s
+}
+
+
+function updateCartTimer() {
+    const cartItemStr = localStorage.getItem('cart');
+    if (!cartItemStr) {
+        document.getElementById('cart-timer').textContent = ''; // Clear timer if cart is empty
+        return;
+    }
+    
+    try {
+        const cartItem = JSON.parse(cartItemStr);
+
+        // Check if the cart is empty
+        if (!cartItem.value || cartItem.value.length === 0) {
+            localStorage.removeItem('cart');
+            localStorage.removeItem('Expiry');
+            document.getElementById('cart-timer').textContent = ''; // Clear timer if cart is empty
+            return;
+        }
+        
+        const now = new Date();
+        const expiryTime = new Date(parseInt(cartItem.expiry, 10));
+        const timeRemaining = expiryTime - now;
+
+        if (timeRemaining <= 0 || cartItem.value.length === 0) {
+            localStorage.removeItem('cart');
+            localStorage.removeItem('Expiry');
+            document.getElementById('cart-timer').textContent = '';
+            return;
+        }
+
+        const minutes = Math.floor(timeRemaining / 60000);
+        const seconds = Math.floor((timeRemaining % 60000) / 1000);
+
+        document.getElementById('cart-timer').textContent = `Warenkorb läuft in ${minutes} Minuten und ${seconds} Sekunden ab.`;
+    } catch (error) {
+        console.error('Error parsing cart data:', error);
+        document.getElementById('cart-timer').textContent = 'Error loading cart timer.';
+    }
+}
+
+
+function startCartTimer() {
+    updateCartTimer();
+    setInterval(updateCartTimer, 1000);
 }

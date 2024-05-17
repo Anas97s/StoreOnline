@@ -1,8 +1,23 @@
 document.addEventListener('DOMContentLoaded', async function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const t = urlParams.get('t');
+
+    const pageAccessed = sessionStorage.getItem('pageAccessed');
+
+    if(t != null ){
+        init();
+    }else{
+        window.location.href='index.html';
+    }
+});
+
+async function init(){
     try {
         const response = await fetch(`http://localhost:5502/api/user/auth/status`);
         const data = await response.json();
         const cart = getCart();
+
+        sessionStorage.setItem('pageAccessed', 'true');
         
         const orderText = document.querySelector('h2');
         if(data.isAuthenticated){
@@ -31,6 +46,20 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             const { message } = await res.json();
             orderText.textContent = message;
+            if(message === 'Access denied.'){
+                const statusIconElement = document.getElementById('status-icon');
+        
+                // Remove the existing icon
+                statusIconElement.innerHTML = '';
+
+                // Create a new icon element
+                const iconElement = document.createElement('i');
+
+                iconElement.className = 'fa fa-minus-circle fa-xl';
+                iconElement.style.color = 'red';
+
+                statusIconElement.appendChild(iconElement);
+            }
 
             //Clear local cart
             localStorage.removeItem('cart');
@@ -48,7 +77,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         
     }
     myAccountlink();
-});
+}
+
+function accesDenied(){
+    sessionStorage.removeItem('pageAccessed');
+    window.location.href='index.html';
+}
+
 
 async function getTotal(parfumId, quantity){
     const url = `http://localhost:5502/api/parfums/total/${parfumId}?quantity=${quantity}`;

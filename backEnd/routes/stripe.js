@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Stripe = require('stripe');
 require('dotenv').config();
-const stripe = Stripe(process.env.STRIPE_KEY);
+//const stripe = //hier sollte auch private_key von Stripe (Here private_key from stripe too!)
 const cookieParser = require('cookie-parser');
 router.use(cookieParser());
 

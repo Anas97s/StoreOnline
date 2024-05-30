@@ -1,7 +1,7 @@
-// This is your test publishable API key.
-const stripe = Stripe("pk_test_51PCgVf02m0sUr8hQJR1hSnomACUUWGR6QWOXhxC5enJDJ7V84lnIt9E8DQm60ka3HuJmv6O26KuoLEapqODmosoD00FiVvWP5O", {
+/*
+const stripe = Stripe(hier sollte private_key von stripe (private_key from stipe), {
     locale: 'de'
-});
+});*/
 
 let suc_url;
 // The items the customer wants to buy

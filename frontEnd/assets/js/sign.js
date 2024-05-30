@@ -58,7 +58,7 @@ function initializeSignIn() {
 }
 
 function initializeSignUp() {
-    let name, email, password;
+    let name, email, password, isAdmin, toServer;
     var inputName = document.getElementById('register-name');
     var errorName = document.getElementById('error-name');
     inputName.addEventListener('input', () => {
@@ -76,6 +76,13 @@ function initializeSignUp() {
     inputPass.addEventListener('input', () => {
         password = inputPass.value;
     });
+
+    var isAdminCheck = document.getElementById('admin-select');
+    isAdminCheck.addEventListener('change', ()=>{
+        toServer = isAdminCheck.value;
+    });
+
+
     
     const signUpButton = document.querySelector('.btnSignUp');
     const modal = document.getElementById('login-form-popup-actiove'); 
@@ -83,12 +90,17 @@ function initializeSignUp() {
     
     signUpButton.addEventListener('click', async (event) => {
         event.preventDefault(); 
+        if(toServer === 'Ja'){
+            isAdmin = true;
+        }else{
+            isAdmin = false;
+        }
         const url = `http://localhost:5502/api/user`;
         try {
             const response = await fetch(url, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, password }),
+                body: JSON.stringify({ name, email, password, isAdmin }),
             });
             const res = await response.json();
              

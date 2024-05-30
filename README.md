@@ -1,4 +1,4 @@
-|--------------------------------------|
+
 |    English version is below!!        |
 |--------------------------------------|
 
@@ -11,8 +11,7 @@ Die Integration des Zahlungssystems über Stripe zeigt einen Dummy-Zahlungsproze
 
 **Funktionen**
 
----Frontend---
-
+-**Frontend:**
 - Verwendete Technologien: HTML, JavaScript
 -Funktionalität:
  -Benutzerregistrierung und -anmeldung
@@ -21,7 +20,7 @@ Die Integration des Zahlungssystems über Stripe zeigt einen Dummy-Zahlungsproze
  -Bearbeiten bestehender Parfümdetails (es muss als Admin angemeldet sein)
  -Responsives Design für ein nahtloses Erlebnis auf verschiedenen Geräten
 
----Backend---
+-**Backend:**
 -Verwendete Technologien: Node.js
 -Funktionalität:
  -API-Endpunkte für die Benutzerauthentifizierung
@@ -87,7 +86,7 @@ This web application offers a user-friendly interface for adding, editing, and m
 The payment system integration via Stripe demonstrates a dummy payment process, which has been disabled for security reasons.
 
 **Features**
--Frontend:
+-**Frontend:**
   -Technologies Used: HTML, JavaScript
 -Functionality:
  -User registration and login
@@ -96,7 +95,7 @@ The payment system integration via Stripe demonstrates a dummy payment process, 
  -Editing existing perfume details (admin login required)
  -Responsive design for a seamless experience across different devices
 
--Backend
+-**Backend:**
  -Technologies Used: Node.js
 Functionality:
  -API endpoints for user authentication
